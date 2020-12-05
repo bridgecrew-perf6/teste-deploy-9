@@ -1,0 +1,137 @@
+
+entity Clinic {
+    name String required,
+    cnpj Long required,
+    date Instant,
+}
+
+entity Saldo{
+	valor BigDecimal required,
+    dataAtualizacao Instant,
+}
+
+entity Movimentacao{
+	valor BigDecimal required,
+    data Instant,
+    descricao String,
+    tipoMovimento TipoMovimento,
+    
+}
+
+entity Address {
+	city String,
+    publicArea String,
+    district String,
+    cep Long,
+    number Long,
+    uf String,
+    data Instant
+}
+
+entity Proprietario{
+
+}
+
+entity Paciente{
+
+}
+
+entity Profissional{
+
+    cfo String
+}
+
+entity Employee{
+
+}
+
+entity BasicData {
+	name String,
+    birthDate Instant,
+    date Instant,
+    cpf Long,
+    idCard Long,
+    father String,
+    mother String,
+    photo String,
+    gender Sexo    
+}
+
+entity Contato{
+	telefone Long,
+    celular Long,
+    email String
+}
+
+entity TipoProfissional{
+	descricao String
+}
+
+entity Consulta{
+	dataConsulta Instant required,
+    idProfissional Long required,
+    idPaciente Long required,
+    statusPagamento Boolean,
+    statusConsulta StatusConsulta
+}
+
+entity Procedimento {
+	descricao String,
+    cid String,
+    valor BigDecimal
+}
+
+enum TipoMovimento {
+    ENTRADA,
+    SAIDA
+}
+
+enum Sexo {
+    MASCULINO,
+    FEMININO,
+    OUTRO
+}
+enum StatusConsulta{
+	CRIADO,
+	ANGENDADO,
+    EMANDAMENTO,
+    CANCELADO,
+    CONCLUIDO
+}
+relationship OneToMany {
+ 
+   Saldo{movimentacao} to Movimentacao
+   Clinic to Paciente
+   Clinic to Employee
+   Clinic to Profissional
+   Clinic to Consulta
+}
+
+relationship OneToOne{
+    Proprietario{user(login)} to User 
+    Employee {user(login)} to User
+    Profissional {user(login)} to User 
+    Clinic{saldo} to Saldo
+    Clinic to Address
+    Paciente to Address
+    Profissional to Address
+    Employee to Address
+    Clinic to Contato
+    Paciente to Contato
+    Profissional to Contato
+    Employee to Contato
+    Profissional to TipoProfissional
+    Paciente to BasicData
+    Profissional to BasicData
+    Employee to BasicData
+    Proprietario to BasicData
+    Consulta to Procedimento
+    
+}
+
+
+relationship ManyToMany {
+
+   Clinic {proprietario(login)} to Proprietario {clinica(nome)}
+ 
+}

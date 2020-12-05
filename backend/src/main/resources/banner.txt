@@ -1,0 +1,13 @@
+
+
+${AnsiColor.RED} ██████╗██╗     ██╗███╗   ██╗██╗ ██████╗
+${AnsiColor.RED}██╔════╝██║     ██║████╗  ██║██║██╔════╝
+${AnsiColor.RED}██║     ██║     ██║██╔██╗ ██║██║██║
+${AnsiColor.RED}██║     ██║     ██║██║╚██╗██║██║██║
+${AnsiColor.RED}╚██████╗███████╗██║██║ ╚████║██║╚██████╗
+${AnsiColor.RED} ╚═════╝╚══════╝╚═╝╚═╝  ╚═══╝╚═╝ ╚═════╝
+
+
+
+${AnsiColor.BRIGHT_BLUE}:: Clinic 🤓  :: Running Spring Boot ${spring-boot.version} ::
+:: https://www.clinica.life ::${AnsiColor.DEFAULT}
