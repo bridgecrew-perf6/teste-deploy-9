@@ -17,8 +17,6 @@
   },
   "private": true,
   "dependencies": {
-    "generator-jhipster": "6.8.0",
-    "@openapitools/openapi-generator-cli": "1.0.10-4.2.3"
     "@angular/animations": "^9.1.11",
     "@angular/cdk": "^9.2.2",
     "@angular/common": "~9.1.0",
@@ -78,9 +76,6 @@
     "tslint": "~6.1.0",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "~3.8.3"
-  },
-  "engines": {
-    "node": ">=8.9.0"
   },
   "husky": {
     "hooks": {
